@@ -1,5 +1,6 @@
 import { message, Tooltip, Typography } from 'antd';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const renderEllipsis = (
   dom: JSX.Element,
@@ -20,6 +21,7 @@ export const renderCopyable = (
   text: any,
   item: { copyable: any; ellipsis: any }
 ) => {
+  const { t } = useTranslation();
   if (item.copyable || item.ellipsis) {
     return (
       <Typography.Text
@@ -32,7 +34,7 @@ export const renderCopyable = (
           item.copyable && text
             ? {
                 text,
-                onCopy: () => message.success('复制成功'),
+                onCopy: () => message.success(t('复制成功')),
               }
             : undefined
         }

@@ -48,6 +48,7 @@ export interface TableRenderProps<RecordType extends Object = any>
   /** 切换分页时是否需要请求接口 */
   pageChangeWithRequest?: boolean;
   onTabChange?: () => any;
+  locale?: 'en' | 'cn';
 }
 
 export interface TableState<RecordType> {
@@ -88,6 +89,7 @@ export interface SearchProps<RecordType> extends Omit<FRProps, 'form'> {
   onSearch?: (search: any) => any;
   afterSearch?: (params: any) => any;
   widgets?: any;
+  locale?: 'en' | 'cn';
 }
 
 type ApiType<RecordType> =

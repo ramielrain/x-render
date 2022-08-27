@@ -4,6 +4,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { SearchProps } from '../types';
 import { useTable } from './hooks';
 import { cloneDeep } from 'lodash-es';
+import { useTranslation } from 'react-i18next';
+import '../i18next';
 
 const SearchBtn = ({
   clearSearch,
@@ -67,15 +69,22 @@ const MySearchBtn = ({
 const Search: <RecordType extends object = any>(
   props: SearchProps<RecordType>
 ) => React.ReactElement = props => {
+  const { i18n, t } = useTranslation();
   const {
     searchBtnRender,
     searchBtnStyle,
     searchBtnClassName,
-    searchText = '查询',
-    resetText = '重置',
+    searchText = t('查询'),
+    resetText = t('重置'),
     searchWithError = true,
     style = {},
+    locale = 'cn'
   } = props;
+
+  useEffect(() => {
+    i18n.changeLanguage(locale);
+  }, [locale]);
+
   const [formSchema, setSchema] = useState({});
   const { refresh, syncMethods, setTable, form, tableState }: any = useTable();
   const _schema = props.schema || props.propsSchema;

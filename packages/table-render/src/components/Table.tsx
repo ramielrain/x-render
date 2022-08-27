@@ -5,7 +5,9 @@ import { getDate, getDateTime, getMoneyType } from '../utils';
 import ErrorBoundary from './ErrorBoundary';
 import { renderDom } from './field';
 import { useTable } from './hooks';
+import { useTranslation } from 'react-i18next';
 import ToolBarAction from './ToolBarAction';
+import '../i18next';
 
 const ProTable: <RecordType extends object = any>(
   props: TableRenderProps<RecordType>
@@ -38,7 +40,13 @@ const ProTable: <RecordType extends object = any>(
     style = {},
     className = '',
     toolbarAction = false,
+    locale = 'cn'
   } = props;
+
+  const { i18n, t } = useTranslation();
+  useEffect(() => {
+    i18n.changeLanguage(locale);
+  }, [locale]);
 
   columns.map((item: any) => {
     const result = item;

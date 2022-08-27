@@ -44,7 +44,9 @@
     "@ant-design/icons": "^4.2.2",
     "dayjs": "^1.8.29",
     "form-render": "1.x",
-    "lodash.get": "^4.4.2"
+    "i18next": "^21.9.1",
+    "lodash.get": "^4.4.2",
+    "react-i18next": "^11.18.5"
   },
   "devDependencies": {
     "babel-plugin-transform-remove-console": "^6.9.4",

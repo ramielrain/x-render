@@ -1,0 +1,16 @@
+{
+  "translation": {
+    "查询": "Search",
+    "重置": "Clear",
+    "刷新": "Refresh",
+    "表格密度": "Density",
+    "默认": "Default",
+    "中等": "Middle",
+    "紧凑": "Compact",
+    "全屏": "Full Screen",
+    "退出全屏": "Exit Full Screen",
+    "当前页面不支持全屏功能": "Sorry,Full Screen is not supported",
+    "复制成功": "Copy Success",
+    "列设置": "Column Settings"
+  }
+}
